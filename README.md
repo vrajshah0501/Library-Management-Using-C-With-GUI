@@ -1,30 +1,44 @@
 # Library Management with C
-To run this code you need to install the development package GTK. The package name may vary depending on your Linux distribution.
+Certainly! The provided project is a simple Library Management System implemented in C using the GTK (GIMP Toolkit) library for the graphical user interface. Here's a brief summary:
 
-Running GTK applications on Windows requires some additional setup. GTK is primarily designed for Unix-like systems, but it can be used on Windows with the help of the GTK development environment called MSYS2.
+### Project Overview:
 
-Here are the general steps to set up MSYS2 and compile the provided GTK code on Windows:
+*Features:*
+1. *Add a Book:* Allows the user to add a book to the library by providing the title, author, and publication year.
 
-Install MSYS2:
-Download the MSYS2 installer from the official website.
-Follow the installation instructions on the website.
+2. *Display All Books:* Displays a catalog of all books in the library, including their titles, authors, and publication years.
 
-Update MSYS2:
-Open the MSYS2 terminal and run the following commands to update the package database and core system components:
-pacman -Syu
+3. *Search for a Book:* Enables the user to search for a book by its title. If found, it displays detailed information about the book.
 
-Install necessary packages:
-Install the required development packages for GTK. In the MSYS2 terminal, run:
-pacman -S mingw-w64-x86_64-gtk3
+4. *Delete a Book:* Allows the user to delete a book from the library by providing its title.
 
-Compile the code:
-Open the MSYS2 terminal in the directory containing your source code.
-Compile the code using the following command:
-gcc -o your_program_name your_source_code.c `pkg-config --cflags --libs gtk+-3.0`
-Replace your_program_name with the desired name for the compiled executable and your_source_code.c with the name of your source code file.
+5. *Display Books by Author:* Displays a list of books by a specific author.
 
-Run the executable:
-After successful compilation, you can run the program using:
-./your_program_name
+6. *Exit:* Exits the program.
 
-Please note that the exact steps might vary depending on your specific environment. If you encounter any issues or have further questions, feel free to ask!
+*Implementation:*
+- The program uses a simple console-based user interface created with GTK.
+- Books are represented as structures with fields for title, author, and year of publication.
+- The program maintains an array of books (the library) and tracks the number of books in the array.
+- Various functions handle adding books, displaying the catalog, searching for books, deleting books, and displaying books by a specific author.
+
+*How to Run:*
+1. Compile the program using GCC and include the necessary GTK flags:
+
+   bash
+   gcc -o script script.c `pkg-config --cflags --libs gtk+-3.0`
+   
+
+2. Run the compiled executable:
+
+   bash
+   ./script
+   
+
+3. The GTK-based graphical user interface will open, allowing you to interact with the Library Management System.
+
+*Notes:*
+- Ensure that the GTK development libraries are installed on your system before compilation.
+- The project provides a basic example of a GUI application for a library management system, and you can expand it further based on your requirements.
+
+Feel free to customize and enhance the project as needed for your specific use case!
